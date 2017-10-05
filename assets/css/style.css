@@ -327,14 +327,18 @@ nav ul li:nth-child(3) {
 
 .about-me .bg-about {
 	position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 10%;
+    left: 0;
     z-index: 1;
     width: 100%;
     height: auto;
     overflow: hidden;
     z-index: -1;
+    background: url(../img/aboutbg.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 100%;
 }
 
 .about-me article {
@@ -357,6 +361,14 @@ nav ul li:nth-child(3) {
     width: 36%;
     text-align: center;
     margin-left: 9%;
+    opacity: 0;
+    transform: translateY(200px);
+    transition: 0.5s ease-in-out;
+}
+
+.about-me .text.show {
+	opacity: 1;
+	transform: translateY(0px);
 }
 
 .about-me h1 {
@@ -432,7 +444,14 @@ nav ul li:nth-child(3) {
     flex-direction: column;
     -ms-flex-pack: center;
     justify-content: center;
+    opacity: 0;
+    transform: translateY(200px);
+    transition: .8s ease-in-out;
+}
 
+.about-me .figure.show {
+	transform: translateY(0px);
+	opacity: 1;
 }
 
 .about-me .figure img {
@@ -449,24 +468,38 @@ nav ul li:nth-child(3) {
 	position: relative;
 	padding:100px 4%;
 	background-color: #fff;
+	overflow: hidden;
 }
 
 .portfolio .bg-port {
 	position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 10%;
+    left: 0;
     z-index: 1;
     width: 100%;
     height: auto;
     overflow: hidden;
     z-index: 1;
+    background: url(../img/project.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 100%;
 }
 
 .portfolio .title {
 	padding: 20px 5%;
 	position: relative;
 	z-index: 2;
+}
+
+.portfolio .title {
+	transform: translateY(100px);
+	transition: all .5s ease-in-out;
+}
+
+.portfolio .title.move-in {
+	transform: translateY(0px);
 }
 
 .portfolio .title h1 {
@@ -509,6 +542,15 @@ nav ul li:nth-child(3) {
 
 .portfolio .wrapper > div {
 	background-color: #ddd;
+	opacity: 0;
+	transform: translateY(300px) scale(.5);
+	transition: all .5s ease-in-out;
+	position: relative;
+}
+
+.portfolio .wrapper > div.is-showing {
+	opacity: 1;
+	transform: translateY(0px) scale(1);
 }
 
 .project-wrapper {
